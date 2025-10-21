@@ -1,0 +1,515 @@
+{
+  "name": "뉴스실습",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "뉴스수집링크",
+        "formDescription": "뉴스링크",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "뉴스모집",
+              "placeholder": "뉴스기사게더링"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d4d5e9e8-2155-414f-9eeb-78fbd4b03694",
+      "name": "On form submission",
+      "webhookId": "6277ad5d-db24-4bea-baac-7dc40701287f"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c89bded9-a647-4a1c-9fcc-0834eac26d7c",
+              "name": "뉴스모집",
+              "value": "={{ $json[\"뉴스모집\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "672e58be-56f3-48e3-8eee-b6da8166491d",
+              "name": "keyvaule",
+              "value": "={{ $now }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f2d96b81-9398-4c5a-8e1b-ec46137cf9ec",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1RPqBHxWhYoNeUkjEHZF29GqeZSJrPJ9p6sGBVMbApkY",
+          "mode": "list",
+          "cachedResultName": "뉴스실습",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1RPqBHxWhYoNeUkjEHZF29GqeZSJrPJ9p6sGBVMbApkY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "시트1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1RPqBHxWhYoNeUkjEHZF29GqeZSJrPJ9p6sGBVMbApkY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "뉴스링크": "={{ $json[\"뉴스모집\"] }}",
+            "keyvaule": "={{ $json.keyvaule }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "뉴스링크",
+              "displayName": "뉴스링크",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "keyvaule",
+              "displayName": "keyvaule",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "문장요약",
+              "displayName": "문장요약",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "한줄평",
+              "displayName": "한줄평",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        416,
+        0
+      ],
+      "id": "5ad02d40-12c6-4007-9281-0d60c054168e",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "gcVSXDKuGHVmqZpk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[\"뉴스링크\"] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        624,
+        0
+      ],
+      "id": "d2780488-1809-489a-a910-92eec5341441",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=아래 뉴스 기사를 요약과,한 줄 평을 해줘 {{ $json.data }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        832,
+        0
+      ],
+      "id": "35ed495c-9aa8-4a27-ba21-3710751de09d",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "34q1Me9gcWkEfRqm",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "18638a24-0a90-4f80-be09-ae55f6371b6b",
+              "name": "content.parts[0].text",
+              "value": "={{ $json.content.parts[0].text }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1184,
+        0
+      ],
+      "id": "a4f322f0-f8bb-4c4c-9406-00b72f7646de",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1RPqBHxWhYoNeUkjEHZF29GqeZSJrPJ9p6sGBVMbApkY",
+          "mode": "list",
+          "cachedResultName": "뉴스실습",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1RPqBHxWhYoNeUkjEHZF29GqeZSJrPJ9p6sGBVMbApkY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "시트1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1RPqBHxWhYoNeUkjEHZF29GqeZSJrPJ9p6sGBVMbApkY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "문장요약": "={{ $json.content.parts[0].text.summary }}",
+            "한줄평": "={{ $json.content.parts[0].text.one_line_review }}",
+            "keyvaule": "={{ $('Append row in sheet').item.json.keyvaule }}"
+          },
+          "matchingColumns": [
+            "keyvaule"
+          ],
+          "schema": [
+            {
+              "id": "뉴스링크",
+              "displayName": "뉴스링크",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "keyvaule",
+              "displayName": "keyvaule",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "문장요약",
+              "displayName": "문장요약",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "한줄평",
+              "displayName": "한줄평",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        176,
+        352
+      ],
+      "id": "bdf1df63-b541-449e-a618-9081391c49c4",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "gcVSXDKuGHVmqZpk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "15PSi6M5ssF-wcTMlC5ifEzl42g7iFld8CxvGtQasJdI",
+          "mode": "list",
+          "cachedResultName": "Member_informations",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15PSi6M5ssF-wcTMlC5ifEzl42g7iFld8CxvGtQasJdI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15PSi6M5ssF-wcTMlC5ifEzl42g7iFld8CxvGtQasJdI/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        384,
+        352
+      ],
+      "id": "2fa2f16d-4944-4acf-ac04-f94e345f7119",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "gcVSXDKuGHVmqZpk",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "google Email"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        592,
+        352
+      ],
+      "id": "2bdabdde-5606-4ec3-9439-03ef5e3eaf70",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json[\"google Email\"].join(\",\") }}",
+        "subject": "뉴스전달",
+        "message": "=문잔요약 {{ $('Edit Fields1').item.json.content.parts[0].text.summary }}\n한줄평:{{ $('Edit Fields1').item.json.content.parts[0].text.one_liner_review }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        800,
+        352
+      ],
+      "id": "1ac4d3ca-cade-4539-8c20-9f00e015d30c",
+      "name": "Send a message",
+      "webhookId": "d9b945ac-eb4e-4690-849f-496b418dc8d1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "DwoGgHMqQmY4Hzqa",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Edit Fields": [
+      {
+        "json": {
+          "뉴스모집": "https://www.yna.co.kr/view/AKR20251021116951008?section=economy/finance",
+          "keyvaule": "2025-10-21T17:25:04.465+09:00"
+        }
+      }
+    ],
+    "Append row in sheet": [
+      {
+        "json": {
+          "뉴스링크": "https://www.yna.co.kr/view/AKR20251021116951008?section=economy/finance",
+          "keyvaule": "2025-10-21T17:25:04.465+09:00"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "76d9d260-03d8-458e-affe-4eec2b6e88df",
+  "meta": {
+    "instanceId": "37133f35d80fd619101e11ab2ed033188a34b3bfc2e56f72910039a30e883e60"
+  },
+  "id": "zU8SlVAnle1NvVxi",
+  "tags": []
+}
