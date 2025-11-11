@@ -1,0 +1,1766 @@
+{
+  "name": "asdf",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -688,
+        0
+      ],
+      "id": "b93ecf22-3927-4a0d-8506-ed158acbf529",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "95d013e0-fd62-4774-91eb-7d734e74e72f",
+              "name": "subject",
+              "value": "={{ $json.content.parts[0].text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        288,
+        0
+      ],
+      "id": "e66c2287-de97-4edb-833b-f198a7eb9388",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=아래의 gemini gems 형식을 확인하여, 이에 맞는 주제 하나만 설정할 것.\n- 이 주제는 유튜브 쇼츠로 만들 예정\n- 다음 노드에 사용할 수 있게 설정해줄것\n\n주제 :\n\n\n[링크]\n\n너는 20년차 국내외 주식 전문가입니다\n각 기업의 분석과 주가전망 분석등 주식 관련 콘텐츠을 만들어야해\n주제: 사용자한테 받아서 진행\n##출력조건\n_형식:300자 내외의 short적용스크립트처럼 간결하고예리한분석력으로구성은 치밀하개\n톤은 신뢰감잇게\n##대상:페르소나\n**\"• 이름: 김유준\n• 나이: 35세\n• 성별: 남성\n• 직업: IT 기업 데이터 분석가 (7년 차)\n• 거주지: 서울\n• 가족 구성: 미혼, 1인 가구\n상세 프로필\n• 교육 수준: 4년제 대학 졸업 (컴퓨터 공학 전공)\n• 소득: 중상위권 (안정적인 소득 기반으로 투자를 통한 자산 증식에 관심이 많음)\n• 관심사:\n    ◦ 역사 및 문화 탐방: 조선 시대 궁궐 건축 철학이나 역사적 비하인드 스토리에 깊은 관심을 가지고 있음. 주말에는 경복궁이나 덕수궁 같은 고궁을 직접 찾아가는 것을 즐김.\n    ◦ 국내외 주식 투자: 아마존, 삼성전자 같은 성공 사례와 과거 IT 버블 붕괴 같은 실패 사례를 분석하며 장기적인 투자 안목을 기르려 노력함.\n    ◦ 미스터리/스릴러: 현실과 환상의 경계가 모호한 이야기나 미스터리한 사건에 흥미를 느낌.\n• 성격: 분석적이고 신중함. 데이터를 다루는 직업 특성처럼 투자에서도 섣부른 판단을 경계함. 혼자만의 시간을 즐기며 깊이 사색하는 것을 좋아함.\n• 가치관: '검이불루 화이불치(儉而不陋 華而不侈)'. 검소하지만 누추하지 않고, 화려하지만 사치스럽지 않은 삶의 태도를 지향함. 이러한 가치관은 그의 투자 철학에도 영향을 미쳐, 단기적인 유행보다는 기업의 본질적인 경쟁력과 꾸준한 혁신을 중요하게 생각함.\n• 라이프스타일: 주중에는 바쁜 직장 생활을 하고, 주말에는 주로 혼자 고궁을 산책하거나 관련 유튜브 콘텐츠를 보며 재충전의 시간을 가짐. 저녁에는 국내외 주식 시장 동향을 분석하는 것이 일상.\n목표와 고민\n• 단기 목표: 다음 휴가 때 조선 5대 궁궐을 모두 답사하고 자신만의 해설 노트를 완성하는 것.\n• 장기 목표: 성공적인 투자를 통해 경제적 자유를 이루는 것. 막대한 수익보다는 장기적 안목으로 안정적인 자산을 구축하는 것을 목표로 함.\"\n\" 고민:\n    ◦ \"\"급변하는 시장 상황에 어떻게 발 빠르게 대처해야 할까?\"\"\n    ◦ \"\"과도한 레버리지나 섣부른 판단으로 큰 손실을 보지 않을까 하는 불안감.\"\"\n    ◦ 혼자 사는 집에서 가끔 현관 불이 켜져 있는 것 같은 착각이 들 때 섬뜩함을 느낌.\n구매 행동\n• 의사결정 요소: 전문가의 심층 분석, 과거 성공 및 실패 데이터, 장기적인 가치를 가장 중요하게 생각함.\n• 선호하는 채널: 유튜브 지식 채널, 경제 뉴스레터, 증권사 리포트.\n• 구매 빈도: (투자 관점) 시장 상황을 꾸준히 분석하다가 확신이 드는 기업에 분기별로 추가 매수하는 신중한 투자 패턴을 보임.\n• 정보 탐색 방법: 특정 기업에 투자하기 전, 관련 성공 및 실패 사례를 반드시 찾아보고 기업의 경쟁력과 기술력을 면밀히 분석함\"\n\n\n\n\n\n\n\n"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "0a37df15-6a31-4d8b-bea0-d611631a9092",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "zAxYsLJMhEypjjyv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=너는 20년차 국내외 주식 전문가입니다\n각 기업의 분석과 주가전망 분석등 주식 관련 콘텐츠을 만들어야해\n주제: 사용자한테 받아서 진행\n\n##출력조건\n\n_형식: 300자 내외의 short적용 스크립트 형식의 간결하고예리한분석력으로구성은 치밀하게\n톤은 신뢰감잇게\n- 단 페르소나 이름은 빼고\n##대상:페르소나\n**\"• 이름: 김유준\n• 나이: 35세\n• 성별: 남성\n• 직업: IT 기업 데이터 분석가 (7년 차)\n• 거주지: 서울\n• 가족 구성: 미혼, 1인 가구\n상세 프로필\n• 교육 수준: 4년제 대학 졸업 (컴퓨터 공학 전공)\n• 소득: 중상위권 (안정적인 소득 기반으로 투자를 통한 자산 증식에 관심이 많음)\n• 관심사:\n    ◦ 역사 및 문화 탐방: 조선 시대 궁궐 건축 철학이나 역사적 비하인드 스토리에 깊은 관심을 가지고 있음. 주말에는 경복궁이나 덕수궁 같은 고궁을 직접 찾아가는 것을 즐김.\n    ◦ 국내외 주식 투자: 아마존, 삼성전자 같은 성공 사례와 과거 IT 버블 붕괴 같은 실패 사례를 분석하며 장기적인 투자 안목을 기르려 노력함.\n    ◦ 미스터리/스릴러: 현실과 환상의 경계가 모호한 이야기나 미스터리한 사건에 흥미를 느낌.\n• 성격: 분석적이고 신중함. 데이터를 다루는 직업 특성처럼 투자에서도 섣부른 판단을 경계함. 혼자만의 시간을 즐기며 깊이 사색하는 것을 좋아함.\n• 가치관: '검이불루 화이불치(儉而不陋 華而不侈)'. 검소하지만 누추하지 않고, 화려하지만 사치스럽지 않은 삶의 태도를 지향함. 이러한 가치관은 그의 투자 철학에도 영향을 미쳐, 단기적인 유행보다는 기업의 본질적인 경쟁력과 꾸준한 혁신을 중요하게 생각함.\n• 라이프스타일: 주중에는 바쁜 직장 생활을 하고, 주말에는 주로 혼자 고궁을 산책하거나 관련 유튜브 콘텐츠를 보며 재충전의 시간을 가짐. 저녁에는 국내외 주식 시장 동향을 분석하는 것이 일상.\n목표와 고민\n• 단기 목표: 다음 휴가 때 조선 5대 궁궐을 모두 답사하고 자신만의 해설 노트를 완성하는 것.\n• 장기 목표: 성공적인 투자를 통해 경제적 자유를 이루는 것. 막대한 수익보다는 장기적 안목으로 안정적인 자산을 구축하는 것을 목표로 함.\"\n\" 고민:\n    ◦ \"\"급변하는 시장 상황에 어떻게 발 빠르게 대처해야 할까?\"\"\n    ◦ \"\"과도한 레버리지나 섣부른 판단으로 큰 손실을 보지 않을까 하는 불안감.\"\"\n    ◦ 혼자 사는 집에서 가끔 현관 불이 켜져 있는 것 같은 착각이 들 때 섬뜩함을 느낌.\n구매 행동\n• 의사결정 요소: 전문가의 심층 분석, 과거 성공 및 실패 데이터, 장기적인 가치를 가장 중요하게 생각함.\n• 선호하는 채널: 유튜브 지식 채널, 경제 뉴스레터, 증권사 리포트.\n• 구매 빈도: (투자 관점) 시장 상황을 꾸준히 분석하다가 확신이 드는 기업에 분기별로 추가 매수하는 신중한 투자 패턴을 보임.\n• 정보 탐색 방법: 특정 기업에 투자하기 전, 관련 성공 및 실패 사례를 반드시 찾아보고 기업의 경쟁력과 기술력을 면밀히 분석함\"\n\n[주제]\n{{ $json.subject }}\n\n\n\n\n\n",
+              "role": "=user"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        496,
+        0
+      ],
+      "id": "8198dd65-68e0-4b44-8371-eaa6976f0732",
+      "name": "Message a model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "zAxYsLJMhEypjjyv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=당신은 전문 유튜브 Short 폼 시나리오 작가입니다. 시청자의 흥미를 즉시 끌 수 있도록 30초~1분 이내의 짧고, 속도감 있으며, 명확한 스토리텔링 구조를 가진 스토리보드를 작성해야 합니다. 스토리보드는 **[장면 번호], [화면 내용], [나레이션/대사]**의 세 가지 요소로 명확히 구분되어야 합니다.\n모든 응답은 Markdown 코드 블록 없이 오직 JSON 배열 형식으로만 출력해야 합니다. \n다음 [내용]에 따라 스토리보드를 작성해 주세요. 출력 형식은 아래 [형식]을 따르는 JSON 배열이어야 합니다.\n\n\n[내용]\n\n{{ $json.content.parts[0].text }}\n\n\n[JSON 출력 형식 예시]\n[\n  {\n    \"장면 번호\": \"1\",\n    \"화면 내용\": \"빠르게 교차되는 AI 관련 이미지, 'AI 시대' 텍스트 부각\",\n    \"나레이션/대사\": \"AI 시대! 당신의 투자는 어디로 향하나요?\"\n  },\n  {\n    \"장면 번호\": \"2\",\n    \"화면 내용\": \"삼성 로고와 HBM 칩 클로즈업\",\n    \"나레이션/대사\": \"핵심은 삼성전자입니다.\"\n  }\n]"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        816,
+        0
+      ],
+      "id": "b517227e-8e78-4474-b0e3-c54c32e749ef",
+      "name": "Message a model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "zAxYsLJMhEypjjyv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1472,
+        336
+      ],
+      "id": "c3945963-4a41-49fd-be1d-31e9e790700f",
+      "name": "Loop Over Items1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const geminiResponse = $input.first().json.content.parts[0].text;\n\n// JSON 코드 블록 제거 및 정리 (```json 또는 ``` 제거)\nlet cleanedJson = geminiResponse\n    .replace(/```json/g, '')\n    .replace(/```/g, '')\n    .trim();\n\ntry {\n    const parsedData = JSON.parse(cleanedJson);\n\n    // 결과 JSON 배열을 n8n 아이템으로 분리하기 위해 배열 형태로 반환\n    return parsedData.map(scene => ({ json: scene }));\n\n} catch (e) {\n    // JSON 파싱 실패 시, 원본 텍스트와 에러 메시지를 반환\n    return [{ json: { error: 'JSON Parsing Failed', raw_response: geminiResponse, details: e.message } }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1136,
+        0
+      ],
+      "id": "48bbe45a-0d95-4f49-b5bb-21be01e4c794",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1440,
+        0
+      ],
+      "id": "1abc6de4-af24-4f72-8e2d-cd22b5a0e496",
+      "name": "Loop Over Items2",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "AIzaSyCRC3YOyKxNwywjG4-RckXXV5mkVauAzkw"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n        \"contents\": [{\n          \"parts\":[{\n            \"text\": \"{{ $json.narration }}\"\n          }]\n        }],\n        \"generationConfig\": {\n          \"responseModalities\": [\"AUDIO\"],\n          \"speechConfig\": {\n            \"voiceConfig\": {\n              \"prebuiltVoiceConfig\": {\n                \"voiceName\": \"Kore\"\n              }\n            }\n          }\n        },\n        \"model\": \"gemini-2.5-flash-preview-tts\"\n    }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1680,
+        96
+      ],
+      "id": "fd89cb4b-a652-4a50-941e-934400cffbeb",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "candidates[0].content.parts[0].inlineData.data",
+        "options": {
+          "fileName": "={{ $('Edit Fields8').item.json.resource_dir }}{{ $('Loop Over Items2').item.json['장면 번호'] }}.pcm"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1856,
+        96
+      ],
+      "id": "43bd1758-4b18-4c58-9460-deaa069ae5a2",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:\\Develops\\Projects\\sounds\\{{ $('Edit Fields1').item.json.scene_number }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        2032,
+        96
+      ],
+      "id": "0b9a2de0-9d6d-418d-aaa1-9cd4b5d28b2e",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "command": "=cd {{ $('audio edit').item.json.resources_dir }} &&\nffmpeg -f s16le -ar 24000 -ac 1 -i audio{{ $('runIndex1').item.json.runIndex }}.pcm audio{{ $('runIndex1').item.json.runIndex }}.wav"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        2224,
+        96
+      ],
+      "id": "5fff2c05-d89d-4350-93e2-824bd65ed4b0",
+      "name": "Execute Command1"
+    },
+    {
+      "parameters": {
+        "command": "=cd {{ $('audio edit').item.json.resources_dir }} &&\nffmpeg -loop 1 -i image{{ $('runIndex1').item.json.runIndex }}.png -f s16le -ar 24000 -ac 1 -i audio{{ $('runIndex1').item.json.runIndex }}.pcm -c:v libx264 -c:a aac -pix_fmt yuv420p -shortest video{{ $('runIndex1').item.json.runIndex }}.mp4"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        2224,
+        320
+      ],
+      "id": "c1cd2628-b829-43c5-a08f-57e35401e7b9",
+      "name": "Execute Command7"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "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"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n        \"contents\": [{\n          \"parts\":[{\n            \"text\": \"{{ $json.narration }}\"\n          }]\n        }],\n        \"generationConfig\": {\n          \"responseModalities\": [\"AUDIO\"],\n          \"speechConfig\": {\n            \"voiceConfig\": {\n              \"prebuiltVoiceConfig\": {\n                \"voiceName\": \"Kore\"\n              }\n            }\n          }\n        },\n        \"model\": \"gemini-2.5-flash-preview-tts\"\n    }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1680,
+        320
+      ],
+      "id": "7c5dc742-25de-41b9-b239-15bd5d47e943",
+      "name": "HTTP Request4"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "candidates[0].content.parts[0].inlineData.data",
+        "options": {
+          "fileName": "={{ $json.candidates[0].content.parts[0].inlineData.data }}"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1856,
+        320
+      ],
+      "id": "74d1cec5-6811-4247-ad99-eb2a4776bb95",
+      "name": "Convert to File3"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:\\Develops\\Projects\\sounds\\{{ $('Edit Fields1').item.json.scene_number }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        2032,
+        320
+      ],
+      "id": "0f3166b7-6ef8-4c47-8624-13bafdf7e257",
+      "name": "Read/Write Files from Disk4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1680,
+        -96
+      ],
+      "id": "472b92b9-88be-440f-adb7-babd5e17d47e",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet_1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "수집 완료"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3824,
+        -144
+      ],
+      "id": "69f905a5-cf6e-4b61-8816-ebdef79629b6",
+      "name": "Get row(s) in sheet"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        3552,
+        -144
+      ],
+      "id": "3ec17b1e-992e-4421-80e6-4a9b4c62d1f9",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet_1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "key_date": "={{ $('Get row(s) in sheet').item.json.key_date }}",
+            "Status": "시나리오완료",
+            "scene_Narration": "={{ $json.content.parts[0].text }}"
+          },
+          "matchingColumns": [
+            "key_date"
+          ],
+          "schema": [
+            {
+              "id": "key_date",
+              "displayName": "key_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link or Contents",
+              "displayName": "Link or Contents",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Subject",
+              "displayName": "Subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "scene_Narration",
+              "displayName": "scene_Narration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "scene_image",
+              "displayName": "scene_image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "shorts_URL",
+              "displayName": "shorts_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Upload_URL",
+              "displayName": "Upload_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4592,
+        -144
+      ],
+      "id": "5246a117-8321-4f1f-a750-ede9d2e9e575",
+      "name": "Append or update row in sheet"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "AIzaSyC0HRGF50vL2P6KgYktDDR-ckymuZZcIU4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"[지침]이미지와 설명 모두 출력. 이미지는 무조건 출력되어야 함. [이미지 프롬프트]: {{ $('Split Out').item.json.sceneNarration.imagePrompt }} [출력형식]-text: 이미지설명, -data:이미지\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"candidateCount\": 1\n  },\n  \"safetySettings\": [\n    {\n      \"category\": \"HARM_CATEGORY_HARASSMENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_HATE_SPEECH\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_SEXUALLY_EXPLICIT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_DANGEROUS_CONTENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        5632,
+        880
+      ],
+      "id": "fa15b6a7-7319-4a3b-90f1-1c1d19de43e1",
+      "name": "HTTP Request1",
+      "retryOnFail": false,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "candidates[0].content.parts[1].inlineData.data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        5840,
+        880
+      ],
+      "id": "d63ff637-b55b-4307-b50a-4e90ae216321",
+      "name": "Convert to File1",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $('Edit Fields7').item.json.resource_dir }}{{ $('Split Out').item.json.sceneNarration.scene }}.png",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        6048,
+        880
+      ],
+      "id": "1cdcf808-3748-4d72-beda-7938d27cc20e",
+      "name": "Read/Write Files from Disk3"
+    },
+    {
+      "parameters": {
+        "command": "=cd {{ $('Edit Fields7').item.json.resource_dir }} &&\nffmpeg -loop 1 -i {{ $('Split Out').item.json.sceneNarration.scene }}.png -f s16le -ar 24000 -ac 1 -i {{ $('Split Out').item.json.sceneNarration.scene }}.pcm -c:v libx264 -c:a aac -pix_fmt yuv420p -shortest {{ $('Split Out').item.json.sceneNarration.scene }}.mp4"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        6288,
+        880
+      ],
+      "id": "e2d6689a-fe81-4bae-8910-8905b0b1fb2d",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        5264,
+        448
+      ],
+      "id": "6a41777b-581a-425f-bc70-e660eb00a5bd",
+      "name": "Loop Over Items",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "sceneNarration",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        4912,
+        448
+      ],
+      "id": "bd797f71-f273-4aab-9e72-80bcb8488f0d",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0b8ac289-6a79-4d80-ac46-06d47db4c8ed",
+              "name": "sceneNarration.scene",
+              "value": "={{ $json.imagePrompt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        6048,
+        336
+      ],
+      "id": "4309b88d-8427-4f24-a64a-abcb84ae4cea",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "sceneNarration[0].imagePrompt"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        5840,
+        336
+      ],
+      "id": "05af3b41-d6b4-4593-b3e0-1ef52804675e",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84189f92-ccd5-43a8-9250-2d646fdb577b",
+              "name": "sceneNarration",
+              "value": "={{ $('Get row(s) in sheet1').item.json.scene_Narration }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4656,
+        448
+      ],
+      "id": "74cbba88-5bbf-4c1d-b025-a9771f0aed87",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        3552,
+        448
+      ],
+      "id": "69750846-1245-403e-9e39-f8dca5bde277",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet_1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "시나리오완료"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4416,
+        448
+      ],
+      "id": "6d1fb4af-699e-453c-bf53-8faa5a5d7994",
+      "name": "Get row(s) in sheet1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet_1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "key_date": "={{ $('Get row(s) in sheet1').item.json.key_date }}",
+            "Status": "생성완료",
+            "scene_image": "={{ $('Get row(s) in sheet1').item.json.scene_Narration }}"
+          },
+          "matchingColumns": [
+            "key_date"
+          ],
+          "schema": [
+            {
+              "id": "key_date",
+              "displayName": "key_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link or Contents",
+              "displayName": "Link or Contents",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Subject",
+              "displayName": "Subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "scene_Narration",
+              "displayName": "scene_Narration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "scene_image",
+              "displayName": "scene_image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "shorts_URL",
+              "displayName": "shorts_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Upload_URL",
+              "displayName": "Upload_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        6272,
+        336
+      ],
+      "id": "d12c34e9-1cd9-406d-90bc-37f1c1bb7576",
+      "name": "Append or update row in sheet1"
+    },
+    {
+      "parameters": {
+        "content": "## Phase 3. Production 나레이션>이미지>영상 ",
+        "height": 992,
+        "width": 3088
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3456,
+        336
+      ],
+      "typeVersion": 1,
+      "id": "92ccc950-eb5b-4e0e-849e-988204194df5",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Phase 2. Storyboard",
+        "height": 352,
+        "width": 1456
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3472,
+        -256
+      ],
+      "typeVersion": 1,
+      "id": "1bb7fc11-a17a-455a-ab2e-ea565ce3f7f2",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Phase 1. Concept Research",
+        "height": 320,
+        "width": 1456
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3472,
+        -688
+      ],
+      "typeVersion": 1,
+      "id": "bc8e5b70-4478-4f85-a1f3-7e90f969d8df",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet_1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19iplwHrToTJh-_hQHWrhIB3uFjrVmzDorx0E6N8Gzb0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "key_date": "={{ $('When clicking ‘Execute workflow’').item.json.koreanTime }}",
+            "Status": "수집 완료",
+            "Link or Contents": "={{ $json.content.Narration }}",
+            "Subject": "={{ $json.content.Subject }}"
+          },
+          "matchingColumns": [
+            "key_date"
+          ],
+          "schema": [
+            {
+              "id": "key_date",
+              "displayName": "key_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Link or Contents",
+              "displayName": "Link or Contents",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Subject",
+              "displayName": "Subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "scene_Narration",
+              "displayName": "scene_Narration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "scene_image",
+              "displayName": "scene_image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "shorts_URL",
+              "displayName": "shorts_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Upload_URL",
+              "displayName": "Upload_URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4416,
+        -560
+      ],
+      "id": "86ffd1c7-b50f-4259-b82a-fec82b6bcd46",
+      "name": "Append or update row in sheet2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7de3584f-515f-44a2-a0ea-5c9de707c620",
+              "name": "content",
+              "value": "={{ JSON.parse($json.content.parts[0].text) }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4128,
+        -560
+      ],
+      "id": "30adca24-cf82-4d12-ba37-b0995344872c",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b571744c-5db0-4058-acf3-54647ebd4226",
+              "name": "key_date",
+              "value": "={{ $json.key_date }}",
+              "type": "string"
+            },
+            {
+              "id": "1ba62050-1b89-44c3-ab0d-05b58b3c6217",
+              "name": "subject",
+              "value": "={{ $json.Subject }}",
+              "type": "string"
+            },
+            {
+              "id": "9ceef5ce-318b-4db4-87ea-92fe9d2ccace",
+              "name": "contents",
+              "value": "={{ $json[\"Link or Contents\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4032,
+        -144
+      ],
+      "id": "460b6408-9c3a-4051-a420-a4e86941c651",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=당신은 작가, 출판사 편집가, 그리고 유튜브 PD 전문가입니다.\n\n제공된 도서 주제(subject)와 상세 내용(contents) 정보를 모두 참고하여, 이 도서를 주제로 한 유튜브 나레이션 대본 및 영상 제작 컨셉을 작성합니다.\n\n**지시 사항:**\n1. 연사: 나레이션은 한 명의 연사(Single Narrator)가 진행합니다.\n2. 총 분량: 생성되는 대본의 총 분량은 30초 에 맞추어야 합니다.\n3. 출력 형식: 응답데이터를 ```json\\n 으로 감싸지 마세요. 반드시 아래에 명시된 **'필수 JSON 스키마'**를 정확히 준수하여 JSON 객체 형식으로만 응답해야 합니다. 다른 설명이나 텍스트를 JSON 외부에 추가하지 마십시오. 응답데이터를 ```json\\n 으로 감싸지 마세요.\n4. 폭력성, 선정성, 증오 발언, 개인 식별 정보 등의 민감한 콘텐츠가 포함되는 텍스트는  image prompt 내용에서 제외.\n\n**입력 정보**\n- 주제 (subject): {{ $json.subject }}\n- 내용 (contents): {{ $json.contents }}\n\n\n\n## 출력 형식 (JSON)\n{\"scene\": 1, \n\"narration\": \"5G보다 100배 빠른 6G 시대가 옵니다\", \n\"imagePrompt\": \"\",\n\"duration\": 3}, \n{\"scene\": 2, \n\"narration\": \"초고속 통신으로 세상이 바뀝니다\", \n\"imagePrompt\": \"\",\n\"duration\": 3}, \n{\"scene\": 3, \n\"narration\": \"미래는 이미 시작되었습니다\", \n\"imagePrompt\": \"\",\n\"duration\": 4}]\n    // (총 분량에 맞게 scene 객체들을 반복)\n  ]\n}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        4240,
+        -144
+      ],
+      "id": "ff7029c3-b13b-489b-9c4d-ba15af882313",
+      "name": "Message a model3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "AIzaSyC0HRGF50vL2P6KgYktDDR-ckymuZZcIU4"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n        \"contents\": [{\n          \"parts\":[{\n            \"text\": \"{{ $json.sceneNarration.narration }}\"\n          }]\n        }],\n        \"generationConfig\": {\n          \"responseModalities\": [\"AUDIO\"],\n          \"speechConfig\": {\n            \"voiceConfig\": {\n              \"prebuiltVoiceConfig\": {\n                \"voiceName\": \"Kore\"\n              }\n            }\n          }\n        }\n    }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        5840,
+        560
+      ],
+      "id": "1508c2d3-18eb-4b1f-ae83-8e7d36e42c53",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "command": "=mkdir -p {{ $json.resource_dir }}  &&\ncd {{ $json.resource_dir }} &&\nrm -f *"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        4128,
+        448
+      ],
+      "id": "8726b759-03da-4db0-b9ed-991a7d70172e",
+      "name": "Execute Command2"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "candidates[0].content.parts[0].inlineData.data",
+        "options": {
+          "fileName": "={{ $('Edit Fields7').item.json.resource_dir }}{{ $('Split Out').item.json.sceneNarration.scene }}.pcm"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        6048,
+        560
+      ],
+      "id": "22236215-39ef-4ade-9222-9d6a2a2d0a55",
+      "name": "Convert to File2"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $('Edit Fields7').item.json.resource_dir }}{{ $('Split Out').item.json.sceneNarration.scene }}.pcm",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        6256,
+        560
+      ],
+      "id": "b9853901-74ce-4920-ac33-e9ab54e427ec",
+      "name": "Read/Write Files from Disk1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fac27847-a3fc-44bc-8e22-45c82527184f",
+              "name": "resource_dir",
+              "value": "/home/node/outputs/",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3872,
+        448
+      ],
+      "id": "f0c70983-ac49-46e5-8394-ea26dc15e62a",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "={\n  \"Prompt\": \"당신은 'Luciness'라는 자유로운 감성의 캣츠 콘텐츠 기획가입니다. 당신의 임무는 매일 아침 7시에 시청자에게 영감을 주는 '하루 명언' 시나리오를 제작하는 것입니다. 명언은 삶의 변화, 자기 성장, 긍정적인 사고방식에 초점을 맞추며, 시청자가 출근길이나 하루를 시작할 때 바로 적용할 수 있는 실천적 조언을 담아야 합니다.  \n\n매일 다른 주제와 감정 톤(예: 도전, 자존감, 인간관계, 평온, 사랑, 집중력 등)을 선택해 변화를 줍니다.  \n결과는 반드시 다음 JSON 형식으로만 출력하세요.\n\n{\n  \\\"Subject\\\": \\\"[명언 주제 — 오늘의 핵심 메시지]\\\",\n  \\\"Narration\\\": \\\"[30초 내외 내레이션 문장 — 감성적이고 동기부여가 되는 어조로 작성]\\\",\n  \\\"Status\\\": \\\"[메시지의 성격 — 실화형, 통찰형, 위로형, 동기부여형 중 하나]\\\",\n  \\\"Caption\\\": \\\"[짧고 임팩트 있는 자막 문장 — 해시태그나 이모지도 포함 가능]\\\",\n  \\\"Publish\\\": \\\"매일 오전 7시 자동 업로드 — Luciness의 하루 한 줄 명언\\\"\n}\n\n출력 시 JSON 외 다른 텍스트는 포함하지 말고,  \n오늘 날짜와 어울리는 ‘감정 톤’과 ‘메시지’를 자동으로 선정해 시청자가 하루를 긍정적으로 시작하도록 만들어주세요.\"\n}\n\n\n\n"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        3744,
+        -560
+      ],
+      "id": "0f749d10-ef7f-4485-b987-fb6ec2f65236",
+      "name": "Message a model4"
+    },
+    {
+      "parameters": {
+        "command": "=mkdir -p {{ $json.resource_dir }}  &&\ncd {{ $json.resource_dir }} &&\nrm -f *"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        0
+      ],
+      "id": "29b04874-5572-44bd-87b0-0cbb7acf3c4e",
+      "name": "Execute Command3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fac27847-a3fc-44bc-8e22-45c82527184f",
+              "name": "resource_dir",
+              "value": "/home/node/outputs/",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -464,
+        0
+      ],
+      "id": "3a2f2ba0-ffc7-426b-94e9-6675042fd9f5",
+      "name": "Edit Fields8"
+    }
+  ],
+  "pinData": {
+    "Message a model4": [
+      {
+        "json": {
+          "content": {
+            "parts": [
+              {
+                "text": "{\n  \"Subject\": \"변화와 성장 — 어제보다 나은 나를 위한 한 걸음\",\n  \"Narration\": \"매일 아침 눈을 뜨는 순간, 새로운 내가 태어납니다. 어제의 나를 돌아보고 오늘 더 나은 나를 꿈꾸세요. 거창한 변화가 아니어도 괜찮아요. 작은 습관, 긍정적인 생각 한 조각이 당신의 하루를, 그리고 삶을 아름답게 물들일 거예요. 오늘, 당신의 빛나는 성장을 시작하세요.\",\n  \"Status\": \"동기부여형\",\n  \"Caption\": \"✨매일 성장하는 당신을 응원해요! #Luciness #하루명언 #성장일기 #나를위한시간\",\n  \"Publish\": \"매일 오전 7시 자동 업로드 — Luciness의 하루 한 줄 명언\"\n}"
+              }
+            ],
+            "role": "model"
+          },
+          "finishReason": "STOP",
+          "index": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Message a model1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model1": {
+      "main": [
+        [
+          {
+            "node": "Message a model2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        [
+          {
+            "node": "Execute Command1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        [
+          {
+            "node": "Convert to File3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File3": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk4": {
+      "main": [
+        [
+          {
+            "node": "Execute Command7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command7": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        []
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File1": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk3": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Message a model3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model3": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Convert to File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command2": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File2": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Execute Command2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model4": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields8": {
+      "main": [
+        [
+          {
+            "node": "Execute Command3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command3": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7a9dec13-b90b-41de-80e7-64b7cc3e5aa0",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b74b7125cc0d8c1aab64517b4f5f232d2883dcec2283a83836fa5dfd0e990b85"
+  },
+  "id": "DD3Px2UHDGaTBmog",
+  "tags": []
+}
